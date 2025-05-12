@@ -14,5 +14,16 @@ dependencies = [
 ]
 
 [project.scripts]
-zip-analyzer = "zip_analyzer:main"
-zip-manager-gui = "zip_manager_gui:main"
+zip-analyzer = "zip_analyzer.core:main"
+zip-manager-gui = "zip_analyzer.gui:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=6.0"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["zip_analyzer*"]

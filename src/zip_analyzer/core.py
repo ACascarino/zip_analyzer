@@ -4,6 +4,7 @@ import sqlite3
 from pathlib import Path
 import datetime
 
+
 class ZipAnalyzer:
     def __init__(self, db_path='file_index.db'):
         self.db_path = db_path
@@ -148,6 +149,7 @@ class ZipAnalyzer:
                 print(f"Error deleting {path}: {e}")
         print(f"Deleted {deleted} files, freed {total_bytes/1024/1024:.2f} MB")
 
+
 def main():
     analyzer = ZipAnalyzer()
     drive = input("Enter drive or folder to scan (e.g., C:\\): ")
@@ -162,6 +164,7 @@ def main():
         confirm = input("Delete all redundant ZIPs? (yes/no): ")
         if confirm.lower() == "yes":
             analyzer.delete_redundant_zips([z[0] for z in redundant_zips])
+
 
 if __name__ == "__main__":
     main()

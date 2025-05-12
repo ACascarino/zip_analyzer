@@ -12,25 +12,33 @@
 
 ## Quick Start
 
-1. **Install requirements**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+- **Install the package** (from source):
+```powershell
+pip install .
+```
 
-2. **Index your drive and analyze ZIP files**:
-    ```bash
-    python zip_analyzer.py
-    ```
+- **Run the CLI**:
+```powershell
+zip-analyzer --help
+zip-analyzer <drive_or_folder>
+```
 
-3. **(Optional) Use the GUI**:
-    ```bash
-    python zip_manager_gui.py
-    ```
+- **Run the GUI**:
+```powershell
+zip-manager-gui
+```
 
 ## Requirements
 
 - Python 3.8+
-- Dependencies: `PyQt5` (for GUI), standard Python libraries
+- Dependencies are managed via `pyproject.toml` and installed automatically.
+
+## Development
+
+- **Install dev dependencies**:
+```powershell
+pip install .[dev]
+```
 
 ## License
 

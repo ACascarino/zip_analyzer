@@ -5,7 +5,8 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 
-from zip_analyzer import ZipAnalyzer
+from zip_analyzer.core import ZipAnalyzer
+
 
 class IndexingThread(QThread):
     progress = pyqtSignal(int, str)
@@ -21,6 +22,7 @@ class IndexingThread(QThread):
         self.analyzer.analyze_zip_files()
         self.analyzer.find_potential_extractions()
         self.finished_signal.emit()
+
 
 class ZipManagerApp(QMainWindow):
     def __init__(self):
@@ -120,11 +122,13 @@ class ZipManagerApp(QMainWindow):
             if item.text(0) in deleted_paths:
                 root.removeChild(item)
 
+
 def main():
     app = QApplication(sys.argv)
     window = ZipManagerApp()
     window.show()
     sys.exit(app.exec_())
+
 
 if __name__ == "__main__":
     main()
