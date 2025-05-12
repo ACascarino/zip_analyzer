@@ -1,0 +1,18 @@
+[project]
+name = "zip-analyzer"
+version = "0.1.0"
+description = "Scan your drive for ZIP files that have already been extracted, so you can safely delete redundant archives."
+authors = [
+    { name="ACascarino", email="your_email@example.com" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "PyQt5>=5.15.0"
+]
+
+[project.scripts]
+zip-analyzer = "zip_analyzer:main"
+zip-manager-gui = "zip_manager_gui:main"
